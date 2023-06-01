@@ -27,6 +27,11 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+     </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
@@ -34,15 +39,16 @@
    
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>ApiGatewayApplication</mainClass>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <mainClass>C:\Users\H. Treede\Desktop\Software Engeneering\Ass6\newBS\ApiGatewayApplication.java</mainClass>
             </configuration>
-            </plugin>
-        </plugins>
-    </build>
+        </plugin>
+    </plugins>
+  </build>
+
 </project>
 

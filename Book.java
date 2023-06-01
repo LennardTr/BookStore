@@ -1,3 +1,4 @@
+package src.main;
 /**
  * -unique iD
  * -title
@@ -12,11 +13,12 @@ public class Book {
      private int pubYear;
      private int howMany;
 
-     Book(String title, String id, String author, int pubYear) {
+     Book(String title, String id, String author, int pubYear, int quantity) {
           this.title = title;
           this.id = id;
           this.author = author;
           this.pubYear = pubYear;
+          this.quantity = quantity;
      }
 
      // Getter for title
