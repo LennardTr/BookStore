@@ -1,0 +1,196 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API endpoints for managing books in the catalog",
+    "version": "1.0.0",
+    "title": "Book Catalog API"
+  },
+  "tags": [
+    {
+      "name": "books",
+      "description": "Operations on Books"
+    }
+  ],
+  "paths": {
+    "/addBook": {
+      "post": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Add a new book to the catalog",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "book",
+            "description": "Book object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book added successfully"
+          }
+        }
+      }
+    },
+    "/books/{id}/get": {
+      "get": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Get book details by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Book ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book details retrieved successfully",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        }
+      }
+    },
+    "/books/{id}/delete": {
+      "delete": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Delete a book from the catalog",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Book ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book deleted successfully"
+          }
+        }
+      }
+    },
+    "/books/{id}/updateTitle/{newTitle}": {
+      "put": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Update the title of a book",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Book ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "newTitle",
+            "in": "path",
+            "description": "New title",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book title updated successfully"
+          }
+        }
+      }
+    },
+    "/books/{id}/updateAuthor/{newAuthor}": {
+      "put": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Update the author of a book",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Book ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "newAuthor",
+            "in": "path",
+            "description": "New author",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book author updated successfully"
+          }
+        }
+      }
+    },
+    "/books/{id}/changePubYear/{newPubYear}": {
+      "put": {
+        "tags": [
+          "books"
+        ],
+        "summary": "Change the publication year of a book",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Book ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "newPubYear",
+            "in": "path",
+            "description": "New publication year",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book publication year changed successfully"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Book": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "pubYear": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
